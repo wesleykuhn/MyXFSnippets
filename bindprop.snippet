@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Bindable Property</Title>
+            <Author>WesleyKXVII</Author>
+            <Description>Inserts a bindable property.</Description>
+            <Shortcut>bindprop</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[public static BindableProperty $PropName$Property =
+                BindableProperty.Create(nameof($PropName$), typeof($PropType$), typeof($ThisClass$), $DefaultValue$);
+                public $PropType$ $PropName$
+                {
+                    get => ($PropType$)GetValue($PropName$Property);
+                    set => SetValue($PropName$Property, value);
+                }]]>
+            </Code>
+            <Declarations>
+                <Literal>
+                    <ID>PropName</ID>
+                    <ToolTip>The name of the property.</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+                <Literal>
+                    <ID>PropType</ID>
+                    <ToolTip>The returning type of the property.</ToolTip>
+                    <Default>string</Default>
+                </Literal>
+                <Literal>
+                    <ID>ThisClass</ID>
+                    <ToolTip>The declaring class.</ToolTip>
+                    <Default>ThisClass</Default>
+                </Literal>
+                <Literal>
+                    <ID>DefaultValue</ID>
+                    <ToolTip>The default value of the property.</ToolTip>
+                    <Default>null</Default>
+                </Literal>
+            </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
